@@ -12,7 +12,7 @@ class CreateUserController {
         .status(201)
         .json(this.createUserUseCase.execute({ name, email }));
     } catch (error) {
-      return response.status(400).json({ error });
+      return response.status(400).json({ error: error.message });
     }
   }
 }
